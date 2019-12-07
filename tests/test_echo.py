@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import echo
 import subprocess
 
 # Your test case class goes here
