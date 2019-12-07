@@ -22,6 +22,7 @@ class TestEcho(unittest.TestCase):
         self.assertEquals(stdout, usage)
 
     def test_upper(self):
+        """ Running with text should make it uppercase """
         process = subprocess.Popen(
             ["python", "./echo.py", "-u", "hello"],
             stdout=subprocess.PIPE)
@@ -30,6 +31,7 @@ class TestEcho(unittest.TestCase):
         self.assertEquals(stdout, "HELLO")
 
     def test_lower(self):
+        """ Running with text should make it lowercase """
         process = subprocess.Popen(
             ["python", "./echo.py", "-l", "HELLO"],
             stdout=subprocess.PIPE)
@@ -38,6 +40,7 @@ class TestEcho(unittest.TestCase):
         self.assertEquals(stdout, "hello")
 
     def test_title(self):
+        """ Running with text should make the first letter capitalized """
         process = subprocess.Popen(
             ["python", "./echo.py", "-t", "hello"],
             stdout=subprocess.PIPE)
@@ -46,6 +49,7 @@ class TestEcho(unittest.TestCase):
         self.assertEquals(stdout, "Hello")
 
     def test_all(self):
+        """ Running with text should make it do the last command is """
         process = subprocess.Popen(
             ["python", "./echo.py", "-tlu", "hello"],
             stdout=subprocess.PIPE)
@@ -54,6 +58,7 @@ class TestEcho(unittest.TestCase):
         self.assertEquals(stdout, "HELLO")
 
     def test_none(self):
+        """ Running with only text should return that text """
         process = subprocess.Popen(
             ["python", "./echo.py", "hello"],
             stdout=subprocess.PIPE)
